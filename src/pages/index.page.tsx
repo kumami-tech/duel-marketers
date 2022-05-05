@@ -4,7 +4,7 @@ import { Layout } from "~/components/ui/Layout/Layout";
 const Home: NextPage = () => {
   return (
     <Layout>
-      <div></div>
+      <div className="w-full h-[708px] relative bg-[url('/red-and-blue-fire.jpg')] bg-cover"></div>
     </Layout>
   );
 };
