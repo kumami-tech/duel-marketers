@@ -1,13 +1,16 @@
 import type { NextPage } from "next";
 import { Layout } from "~/components/ui/Layout/Layout";
+import { PeopleIcon, TrendingUpIcon, GraphIcon, DirectionIcon } from "~/components/ui/Icons";
+import { Feature } from "~/components/ui/Feature";
 import { Button } from "~/components/ui/Button";
+import { SeparatorDots } from "~/components/ui/SeparatorDots";
 
 const Home: NextPage = () => {
   return (
     <Layout>
-      <div className="w-full h-[708px] relative bg-[url('/red-and-blue-fire.jpg')] bg-cover flex items-center justify-center">
+      <section className="w-full h-[calc(100vh_-_64px)] relative bg-[url('/red-and-blue-fire.jpg')] bg-cover flex items-center justify-center">
         <div className="text-center flex flex-col gap-y-8 items-center">
-          <div className="text-white font-bold text-4xl">Web課題と決闘する</div>
+          <h1 className="text-white font-bold text-4xl">Web課題と決闘する</h1>
           <div className="text-white leading-8">
             「どうやってWebサイトで集客して売り上げに繋げるか分からない」
             <br />
@@ -19,7 +22,42 @@ const Home: NextPage = () => {
           </div>
           <Button label="無料で相談してみる" textColor="text-black" bgColor="bg-white" />
         </div>
-      </div>
+      </section>
+      <section className="py-14 flex flex-col items-center">
+        <h1 className="font-bold text-3xl text-center mb-10">Webでのこんな悩みを解決します</h1>
+        <div className="flex gap-x-20">
+          <Feature
+            icon={<PeopleIcon />}
+            title="Web運用のリソース不足"
+            description="Webマーケティングに詳しい人材がいない。自社スタッフは兼任のためWebに割く時間がない。"
+          />
+          <Feature
+            icon={<TrendingUpIcon />}
+            title="Webの顧客を獲得できない"
+            description="アクセス数が増えない。サイトに集客しても収益に結びつかない。"
+          />
+          <Feature
+            icon={<GraphIcon />}
+            title="サイトに問題がある"
+            description="サイトのどこを修正すればいいのかわからない。ツールは導入しているが分析でつまづいている。"
+          />
+          <Feature
+            icon={<DirectionIcon />}
+            title="何をすべきかわからない"
+            description="サイトを立ち上げたばかりで何から始めていいかわからない。サイトをうまく活用できていない。"
+          />
+        </div>
+        <SeparatorDots className="my-12" />
+        <div className="leading-8 text-center">
+          まずはWeb集客から始め、『収益化』まで繋げていきます。
+          <br />
+          精密な「クライント企業様の調査」「競合分析」「アクセス解析」
+          <br />
+          これらを基に戦略を決め、 実行までサポートさせていただきます。
+          <br />
+          具体的なサービス内容は サービスページ をご覧いただけますと幸いです。
+        </div>
+      </section>
     </Layout>
   );
 };
