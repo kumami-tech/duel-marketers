@@ -46,7 +46,7 @@ const Home: NextPage = () => {
       <section className="w-full h-[calc(100vh_-_64px)] relative bg-[url('/red-and-blue-fire.jpg')] bg-cover flex items-center justify-center">
         <div className="text-center flex flex-col gap-y-8 items-center">
           <h1 className="text-white font-bold text-4xl">Web課題と決闘する</h1>
-          <div className="text-white leading-8">
+          <div className="text-white text-lg leading-10">
             「どうやってWebサイトで集客して売り上げに繋げるか分からない」
             <br />
             「Webサイトはあるけど有効的に使えていない」
@@ -58,9 +58,10 @@ const Home: NextPage = () => {
           <Button label="無料で相談してみる" textColor="text-black" bgColor="bg-white" />
         </div>
       </section>
-      <section className="py-14 flex flex-col items-center">
-        <h1 className="font-bold text-3xl text-center mb-10">Webでのこんな悩みを解決します</h1>
-        <div className="flex gap-x-20">
+
+      <section className="py-20 flex flex-col items-center">
+        <h1 className="font-bold text-3xl text-center mb-10">Webでのこんなお悩みを解決します</h1>
+        <div className="flex gap-x-16">
           <Feature
             icon={<PeopleIcon />}
             title="Web運用のリソース不足"
@@ -82,11 +83,13 @@ const Home: NextPage = () => {
             description="サイトを立ち上げたばかりで何から始めていいかわからない。サイトをうまく活用できていない。"
           />
         </div>
-        <SeparatorDots className="my-12" />
-        <div className="leading-8 text-center">
-          まずはWeb集客から始め、『収益化』まで繋げていきます。
+        <SeparatorDots className="my-14" />
+        <div className="leading-8 text-center text-lg">
+          まずはWeb集客から始め、<span className="font-bold">「収益化」</span>
+          まで繋げていきます。
           <br />
-          精密な「クライント企業様の調査」「競合分析」「アクセス解析」
+          精密な
+          <span className="font-bold">「クライント企業様の調査」「競合分析」「アクセス解析」</span>
           <br />
           これらを基に戦略を決め、 実行までサポートさせていただきます。
           <br />
