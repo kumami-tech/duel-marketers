@@ -55,7 +55,9 @@ const Home: NextPage = () => {
           <br />
           これらを基に戦略を決め、 実行までサポートさせていただきます。
           <br />
-          具体的なサービス内容は サービスページ をご覧いただけますと幸いです。
+          具体的なサービス内容は
+          <span className="text-red underline cursor-pointer mx-0.5">サービスページ</span>
+          をご覧いただけますと幸いです。
         </div>
       </section>
     </Layout>
