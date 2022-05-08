@@ -9,7 +9,9 @@ type LayoutProps = {
 export const Layout: FC<LayoutProps> = (props) => {
   return (
     <div>
-      <Header />
+      <div className="sticky top-0 z-50">
+        <Header />
+      </div>
       <main>{props.children}</main>
       <Footer />
     </div>
