@@ -1,6 +1,12 @@
 import type { NextPage } from "next";
+import Link from "next/link";
 import { Layout } from "~/components/ui/Layout/Layout";
-import { PeopleIcon, TrendingUpIcon, GraphIcon, DirectionIcon } from "~/components/ui/Icons";
+import {
+  PeopleIcon,
+  TrendingUpIcon,
+  GraphIcon,
+  DirectionIcon,
+} from "~/components/ui/Icons";
 import { Feature } from "~/components/ui/Feature";
 import { TableRow } from "~/components/ui/TableRow";
 import { Button } from "~/components/ui/Button";
@@ -36,7 +42,7 @@ const businessSummary = [
       "ウェブ解析士個人認定資格",
       "Google アナリティクス個人認定資格",
       "CEFR C1（TOEIC940点相当）",
-    ].join("\n")
+    ].join("\n"),
   },
 ];
 
@@ -55,12 +61,23 @@ const Home: NextPage = () => {
             <br />
             Webサイトを「価値のある資産」にし、ビジネスを活性化させていきましょう。
           </div>
-          <Button label="無料で相談してみる" textColor="text-black" bgColor="bg-white" />
+          <Link href="/contact">
+            <a className="">
+              <Button
+                label="無料で相談してみる"
+                textColor="text-black"
+                bgColor="bg-white"
+                labelClassName="group-hover:opacity-70"
+              />
+            </a>
+          </Link>
         </div>
       </section>
 
       <section className="py-20 flex flex-col items-center">
-        <h1 className="font-bold text-3xl text-center mb-10">Webでのこんなお悩みを解決します</h1>
+        <h1 className="font-bold text-3xl text-center mb-10">
+          Webでのこんなお悩みを解決します
+        </h1>
         <div className="flex gap-x-16">
           <Feature
             icon={<PeopleIcon />}
@@ -89,12 +106,18 @@ const Home: NextPage = () => {
           まで繋げていきます。
           <br />
           精密な
-          <span className="font-bold">「クライント企業様の調査」「競合分析」「アクセス解析」</span>
+          <span className="font-bold">
+            「クライント企業様の調査」「競合分析」「アクセス解析」
+          </span>
           <br />
           これらを基に戦略を決め、 実行までサポートさせていただきます。
           <br />
           具体的なサービス内容は
-          <span className="text-red underline cursor-pointer mx-0.5">サービスページ</span>
+          <Link href="/service">
+            <a className="text-red underline hover:opacity-80 cursor-pointer mx-0.5">
+              サービスページ
+            </a>
+          </Link>
           をご覧いただけますと幸いです。
         </div>
       </section>
