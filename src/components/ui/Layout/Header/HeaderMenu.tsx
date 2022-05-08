@@ -5,9 +5,9 @@ export const HeaderMenu: FC = () => {
   return (
     <nav>
       <ul className="flex gap-x-8">
-        <HeaderMenuItem title="サービス" />
-        <HeaderMenuItem title="プロフィール" />
-        <HeaderMenuItem title="お問い合わせ" />
+        <HeaderMenuItem title="サービス" url="/service" />
+        <HeaderMenuItem title="プロフィール" url="/profile" />
+        <HeaderMenuItem title="お問い合わせ" url="/contact" />
       </ul>
     </nav>
   );
