@@ -7,7 +7,7 @@ import {
   GraphIcon,
   DirectionIcon,
 } from "~/components/ui/Icons";
-import { Feature } from "~/components/ui/Feature";
+import { ProblemListItem } from "~/components/ui/ProblemListItem";
 import { TableRow } from "~/components/ui/TableRow";
 import { Button } from "~/components/ui/Button";
 import { SeparatorDots } from "~/components/ui/SeparatorDots";
@@ -79,22 +79,22 @@ const Home: NextPage = () => {
           Webでのこんなお悩みを解決します
         </h1>
         <div className="flex gap-x-16">
-          <Feature
+          <ProblemListItem
             icon={<PeopleIcon />}
             title="Web運用のリソース不足"
             description="Webマーケティングに詳しい人材がいない。自社スタッフは兼任のためWebに割く時間がない。"
           />
-          <Feature
+          <ProblemListItem
             icon={<TrendingUpIcon />}
             title="Webの顧客を獲得できない"
             description="アクセス数が増えない。サイトに集客しても収益に結びつかない。"
           />
-          <Feature
+          <ProblemListItem
             icon={<GraphIcon />}
             title="サイトに問題がある"
             description="サイトのどこを修正すればいいのかわからない。ツールは導入しているが分析でつまづいている。"
           />
-          <Feature
+          <ProblemListItem
             icon={<DirectionIcon />}
             title="何をすべきかわからない"
             description="サイトを立ち上げたばかりで何から始めていいかわからない。サイトをうまく活用できていない。"
