@@ -62,7 +62,7 @@ const ServicePage: NextPage = () => {
     <Layout>
       <div className="flex flex-col items-center py-12">
         <h1 className="font-bold text-xl">サービス</h1>
-        <div className="flex flex-col gap-y-8 items-center py-10">
+        <div className="flex flex-col gap-y-8 items-center py-7">
           {serviceList.map((item, index) => (
             <ServiceListItem
               key={index}
