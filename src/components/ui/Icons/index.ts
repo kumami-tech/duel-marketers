@@ -1,6 +1,6 @@
 export { PeopleIcon } from "./PeopleIcon";
 export { TrendingUpIcon } from "./TrendingUpIcon";
-export { GraphIcon } from "./GraphIcon";
+export { ComputerIcon } from "./ComputerIcon";
 export { DirectionIcon } from "./DirectionIcon";
 
 export { HandShakeIcon } from "./HandShakeIcon";

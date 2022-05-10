@@ -4,13 +4,48 @@ import { Layout } from "~/components/ui/Layout/Layout";
 import {
   PeopleIcon,
   TrendingUpIcon,
-  GraphIcon,
+  ComputerIcon,
   DirectionIcon,
 } from "~/components/ui/Icons";
 import { ProblemListItem } from "~/components/ui/ProblemListItem";
 import { TableRow } from "~/components/ui/TableRow";
 import { Button } from "~/components/ui/Button";
 import { SeparatorDots } from "~/components/ui/SeparatorDots";
+
+const problemList = [
+  {
+    icon: <PeopleIcon />,
+    title: ["Webに詳しい人材が", "いない"].join("\n"),
+    description: [
+      "自社にWeb周りの知識がある人材がいない",
+      "どのようなWeb担当者を採用したらよいかわからない",
+    ].join("\n"),
+  },
+  {
+    icon: <TrendingUpIcon />,
+    title: ["Web経由の集客が", "できない・わからない"].join("\n"),
+    description: [
+      "サイトの認知度の上げ方がわからない",
+      "集客ができていても収益につながらない",
+    ].join("\n"),
+  },
+  {
+    icon: <ComputerIcon />,
+    title: ["サイトの改善方法が", "わからない"].join("\n"),
+    description: [
+      "サイトの修正部分がわからない",
+      "ツールを使った分析方法がわからない",
+    ].join("\n"),
+  },
+  {
+    icon: <DirectionIcon />,
+    title: ["そもそも何をすべきか", "わからない"].join("\n"),
+    description: [
+      "サイトを立ち上げたばかりで何から始めていいかわからない",
+      "サイト活用の戦略の立て方がわからない",
+    ].join("\n"),
+  },
+];
 
 const businessSummary = [
   {
@@ -38,11 +73,9 @@ const businessSummary = [
   },
   {
     label: "保有資格",
-    data: [
-      "ウェブ解析士個人認定資格",
-      "Google アナリティクス個人認定資格",
-      "CEFR C1（TOEIC940点相当）",
-    ].join("\n"),
+    data: ["Google アナリティクス個人認定資格（GAIQ）", "SEO検定2級"].join(
+      "\n",
+    ),
   },
 ];
 
@@ -53,13 +86,13 @@ const Home: NextPage = () => {
         <div className="text-center flex flex-col gap-y-8 items-center">
           <h1 className="text-white font-bold text-4xl">Web課題と決闘する</h1>
           <div className="text-white text-lg leading-10">
-            「どうやってWebサイトで集客して売り上げに繋げるか分からない」
+            「Webサイトからの集客方法がわからない」
             <br />
-            「Webサイトはあるけど有効的に使えていない」
+            「Webサイトを立ち上げたけれど有効な活用方法がわからない」
             <br />
-            このような悩みを抱えている方を徹底的にサポートします。
+            このような課題とお客様と共に決闘し、
             <br />
-            Webサイトを「価値のある資産」にし、ビジネスを活性化させていきましょう。
+            Web施策の戦略提案から実行まで伴走いたします。
           </div>
           <Link href="/contact">
             <a className="">
@@ -76,55 +109,54 @@ const Home: NextPage = () => {
 
       <section className="py-20 flex flex-col items-center">
         <h1 className="font-bold text-3xl text-center mb-10">
-          Webでのこんなお悩みを解決します
+          このようなWebのお悩みはありませんか？
         </h1>
-        <div className="flex gap-x-16">
-          <ProblemListItem
-            icon={<PeopleIcon />}
-            title="Web運用のリソース不足"
-            description="Webマーケティングに詳しい人材がいない。自社スタッフは兼任のためWebに割く時間がない。"
-          />
-          <ProblemListItem
-            icon={<TrendingUpIcon />}
-            title="Webの顧客を獲得できない"
-            description="アクセス数が増えない。サイトに集客しても収益に結びつかない。"
-          />
-          <ProblemListItem
-            icon={<GraphIcon />}
-            title="サイトに問題がある"
-            description="サイトのどこを修正すればいいのかわからない。ツールは導入しているが分析でつまづいている。"
-          />
-          <ProblemListItem
-            icon={<DirectionIcon />}
-            title="何をすべきかわからない"
-            description="サイトを立ち上げたばかりで何から始めていいかわからない。サイトをうまく活用できていない。"
-          />
+        <div className="flex gap-x-14">
+          {problemList.map((item, index) => {
+            return (
+              <ProblemListItem
+                key={index}
+                icon={item.icon}
+                title={item.title}
+                description={item.description}
+              />
+            );
+          })}
         </div>
         <SeparatorDots className="my-14" />
         <div className="leading-8 text-center text-lg">
-          まずはWeb集客から始め、<span className="font-bold">「収益化」</span>
-          まで繋げていきます。
-          <br />
-          精密な
-          <span className="font-bold">
-            「クライント企業様の調査」「競合分析」「アクセス解析」
-          </span>
-          <br />
-          これらを基に戦略を決め、 実行までサポートさせていただきます。
-          <br />
-          具体的なサービス内容は
-          <Link href="/service">
-            <a className="text-red underline hover:opacity-80 cursor-pointer mx-0.5">
-              サービスページ
-            </a>
-          </Link>
-          をご覧いただけますと幸いです。
+          <p className="mb-6">
+            <span className="font-bold text-red mr-1">DUEL MARKETERS</span>
+            では以上のような悩みを、
+            <br />
+            <span className="font-bold">
+              「お客様の調査」「競合分析」「アクセス解析」
+            </span>
+            を基に戦略設定から実行まで、
+            <br />
+            お客様の課題に寄り添った提案をさせていただきます。
+          </p>
+          <p className="mb-6">
+            どんな小さな困りごとでも構いません。
+            <br />
+            まずは一度ご相談いただければ、真摯にご対応させていただきます。
+          </p>
+          <p>
+            具体的なサービス内容は、
+            <br />
+            <Link href="/service">
+              <a className="text-red underline hover:opacity-80 cursor-pointer mx-0.5">
+                サービスページ
+              </a>
+            </Link>
+            をご覧いただけますと幸いです。
+          </p>
         </div>
       </section>
 
-      <section className="w-full h-[859px] relative bg-[url('/fire-on-right-and-left.jpg')] bg-cover flex flex-col items-center justify-center">
+      <section className="w-full h-[840px] relative bg-[url('/fire-on-right-and-left.jpg')] bg-cover flex flex-col items-center justify-center">
         <div className="flex flex-col items-center">
-          <h1 className="text-white font-bold text-4xl mb-6">事業概要</h1>
+          <h1 className="text-white font-bold text-4xl mb-8">事業概要</h1>
           <div>
             {businessSummary.map((item, index) => (
               <TableRow
