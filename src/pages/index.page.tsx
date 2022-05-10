@@ -7,7 +7,7 @@ import {
   ComputerIcon,
   DirectionIcon,
 } from "~/components/ui/Icons";
-import { Feature } from "~/components/ui/Feature";
+import { ProblemListItem } from "~/components/ui/ProblemListItem";
 import { TableRow } from "~/components/ui/TableRow";
 import { Button } from "~/components/ui/Button";
 import { SeparatorDots } from "~/components/ui/SeparatorDots";
@@ -114,7 +114,7 @@ const Home: NextPage = () => {
         <div className="flex gap-x-14">
           {problemList.map((item, index) => {
             return (
-              <Feature
+              <ProblemListItem
                 key={index}
                 icon={item.icon}
                 title={item.title}

@@ -1,12 +1,12 @@
 import type { FC, ReactNode } from "react";
 
-type FeatureProps = {
+type ProblemListItemProps = {
   icon: ReactNode;
   title: string;
   description: string;
 };
 
-export const Feature: FC<FeatureProps> = (props) => {
+export const ProblemListItem: FC<ProblemListItemProps> = (props) => {
   const titleText = props.title.split("\n").map((item, index) => {
     return (
       <p key={index} className="mb-1 text-center">
