@@ -53,13 +53,13 @@ const Home: NextPage = () => {
         <div className="text-center flex flex-col gap-y-8 items-center">
           <h1 className="text-white font-bold text-4xl">Web課題と決闘する</h1>
           <div className="text-white text-lg leading-10">
-            「どうやってWebサイトで集客して売り上げに繋げるか分からない」
+            「Webサイトからの集客方法がわからない」
             <br />
-            「Webサイトはあるけど有効的に使えていない」
+            「Webサイトを立ち上げたけれど有効な活用方法がわからない」
             <br />
-            このような悩みを抱えている方を徹底的にサポートします。
+            このような課題とお客様と共に決闘し、
             <br />
-            Webサイトを「価値のある資産」にし、ビジネスを活性化させていきましょう。
+            Web施策の戦略提案から実行まで伴走いたします。
           </div>
           <Link href="/contact">
             <a className="">
