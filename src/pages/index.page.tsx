@@ -73,11 +73,9 @@ const businessSummary = [
   },
   {
     label: "保有資格",
-    data: [
-      "ウェブ解析士個人認定資格",
-      "Google アナリティクス個人認定資格",
-      "CEFR C1（TOEIC940点相当）",
-    ].join("\n"),
+    data: ["Google アナリティクス個人認定資格（GAIQ）", "SEO検定2級"].join(
+      "\n",
+    ),
   },
 ];
 
@@ -156,9 +154,9 @@ const Home: NextPage = () => {
         </div>
       </section>
 
-      <section className="w-full h-[859px] relative bg-[url('/fire-on-right-and-left.jpg')] bg-cover flex flex-col items-center justify-center">
+      <section className="w-full h-[840px] relative bg-[url('/fire-on-right-and-left.jpg')] bg-cover flex flex-col items-center justify-center">
         <div className="flex flex-col items-center">
-          <h1 className="text-white font-bold text-4xl mb-6">事業概要</h1>
+          <h1 className="text-white font-bold text-4xl mb-8">事業概要</h1>
           <div>
             {businessSummary.map((item, index) => (
               <TableRow

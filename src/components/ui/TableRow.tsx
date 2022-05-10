@@ -19,7 +19,7 @@ export const TableRow: FC<TableRowProps> = (props) => {
         "text-white text-lg leading-8 border-gray-400 align-top flex",
       ])}
     >
-      <div className="w-56 py-5 font-bold pl-10">{props.label}</div>
+      <div className="w-48 py-5 font-bold pl-10">{props.label}</div>
       <div className="py-5 pr-10">{dataText}</div>
     </div>
   );
