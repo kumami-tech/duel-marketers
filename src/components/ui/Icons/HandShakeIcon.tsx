@@ -6,8 +6,8 @@ type HandShakeIconProps = ComponentPropsWithoutRef<"svg">;
 export const HandShakeIcon: FC<HandShakeIconProps> = (props) => {
   return (
     <svg
-      width="100"
-      height="100"
+      width="28"
+      height="28"
       viewBox="0 0 100 100"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"

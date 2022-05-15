@@ -12,10 +12,12 @@ export const ProfileItem: FC<ProfileItemProps> = (props) => {
   });
 
   return (
-    <div className="w-[960px] flex gap-x-12 items-center leading-7">
-      {props.icon}
+    <div className="w-[790px] flex gap-x-12 items-center leading-7">
       <div>
-        <div className="text-lg font-bold text-red mb-3">{props.title}</div>
+        <div className="text-lg font-bold text-red mb-3 flex gap-x-2 items-center">
+          {props.icon}
+          {props.title}
+        </div>
         <div>{descriptionText}</div>
       </div>
     </div>
