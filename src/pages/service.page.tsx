@@ -1,12 +1,12 @@
 import type { NextPage } from "next";
-import { Layout } from "~/components/ui/Layout/Layout";
-import { ServiceListItem } from "~/components/ui/ServiceListItem";
+import { Layout } from "~/components/Layout/Layout";
+import { ServiceListItem } from "~/components/ServiceListItem";
 import {
   SeoIcon,
   BrowserIcon,
   DataAnalyticsIcon,
   BusinessManIcon,
-} from "~/components/ui/Icons";
+} from "~/components/Icons";
 
 const serviceList = [
   {

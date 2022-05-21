@@ -1,13 +1,13 @@
 import type { NextPage } from "next";
 import Image from "next/image";
-import { Layout } from "~/components/ui/Layout/Layout";
-import { ProfileItem } from "~/components/ui/ProfileItem";
+import { Layout } from "~/components/Layout/Layout";
+import { ProfileItem } from "~/components/ProfileItem";
 import {
   HandShakeIcon,
   AccountCircleIcon,
   LampIcon,
   SquareCapIcon,
-} from "~/components/ui/Icons";
+} from "~/components/Icons";
 
 const profileItemList = [
   {

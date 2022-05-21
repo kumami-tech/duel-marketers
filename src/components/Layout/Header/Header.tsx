@@ -1,7 +1,7 @@
 import type { FC } from "react";
 import Link from "next/link";
-import { Logo } from "~/components/ui/Layout/Header/Logo";
-import { HeaderMenu } from "~/components/ui/Layout/Header/HeaderMenu";
+import { Logo } from "~/components/Layout/Header/Logo";
+import { HeaderMenu } from "~/components/Layout/Header/HeaderMenu";
 
 export const Header: FC = () => {
   return (

@@ -1,5 +1,5 @@
 import type { FC } from "react";
-import { HeaderMenuItem } from "~/components/ui/Layout/Header/HeaderMenuItem";
+import { HeaderMenuItem } from "~/components/Layout/Header/HeaderMenuItem";
 
 export const HeaderMenu: FC = () => {
   return (

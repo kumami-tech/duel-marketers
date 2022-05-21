@@ -1,16 +1,16 @@
 import type { NextPage } from "next";
 import Link from "next/link";
-import { Layout } from "~/components/ui/Layout/Layout";
+import { Layout } from "~/components/Layout/Layout";
 import {
   PeopleIcon,
   TrendingUpIcon,
   ComputerIcon,
   DirectionIcon,
-} from "~/components/ui/Icons";
-import { ProblemListItem } from "~/components/ui/ProblemListItem";
-import { TableRow } from "~/components/ui/TableRow";
-import { Button } from "~/components/ui/Button";
-import { SeparatorDots } from "~/components/ui/SeparatorDots";
+} from "~/components/Icons";
+import { ProblemListItem } from "~/components/ProblemListItem";
+import { TableRow } from "~/components/TableRow";
+import { Button } from "~/components/Button";
+import { SeparatorDots } from "~/components/SeparatorDots";
 
 const problemList = [
   {
