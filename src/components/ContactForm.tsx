@@ -1,11 +1,15 @@
-import React, { FC, useRef } from "react";
+import React, { FC, useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
+import clsx from "clsx";
 
 export const ContactForm: FC = () => {
   const form = useRef();
 
-  const sendEmail = (e) => {
+  const [processing, setProcessing] = useState(false);
+
+  const handleSubmit = (e) => {
     e.preventDefault();
+    setProcessing(true);
 
     emailjs
       .sendForm(
@@ -15,11 +19,14 @@ export const ContactForm: FC = () => {
         process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY,
       )
       .then(
-        (result) => {
-          console.log(result.text);
+        () => {
+          alert("メールを送信しました。");
+          setProcessing(false);
         },
         (error) => {
+          alert("エラーが発生しました。時間をおいて再度実行してください。");
           console.log(error.text);
+          setProcessing(false);
         },
       );
   };
@@ -29,12 +36,13 @@ export const ContactForm: FC = () => {
     "w-full border-gray-300 border rounded-sm outline-0 px-2";
   const textFieldStyle = [inputCommonStyle, "h-10"].join(" ");
   const textAreaStyle = [inputCommonStyle, "h-32 py-1"].join(" ");
+  const opacity = processing ? "opacity-80" : "";
 
   return (
     <form
       ref={form}
-      onSubmit={sendEmail}
-      className="w-[574px] flex  flex-col items-center gap-6"
+      onSubmit={handleSubmit}
+      className="w-[574px] flex flex-col items-center gap-6"
     >
       <div className="w-full">
         <label className={labelStyle}>氏名</label>
@@ -55,7 +63,11 @@ export const ContactForm: FC = () => {
       <input
         type="submit"
         value="送信"
-        className="font-bold text-white bg-red px-14 py-3 rounded-full cursor-pointer"
+        disabled={processing}
+        className={clsx([
+          "font-bold text-white bg-red px-14 py-3 rounded-full cursor-pointer",
+          opacity,
+        ])}
       />
     </form>
   );
