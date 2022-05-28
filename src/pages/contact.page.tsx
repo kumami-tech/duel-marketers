@@ -11,28 +11,27 @@ const ContactPage: NextPage = () => {
   const opacity = processing ? "opacity-80" : "";
   const router = useRouter();
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setProcessing(true);
 
-    emailjs
-      .sendForm(
-        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
-        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID,
-        form.current,
-        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY,
-      )
-      .then(
-        () => {
-          setProcessing(false);
+    try {
+      await emailjs
+        .sendForm(
+          process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
+          process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID,
+          form.current,
+          process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY,
+        )
+        .then(() => {
           router.push("/contact_completed");
-        },
-        (error) => {
-          alert("エラーが発生しました。時間をおいて再度実行してください。");
-          console.log(error.text);
-          setProcessing(false);
-        },
-      );
+        });
+    } catch (error) {
+      alert("エラーが発生しました。時間をおいて再度実行してください。");
+      console.error(error);
+    } finally {
+      setProcessing(false);
+    }
   };
 
   const labelStyle = "font-bold block mb-1";
@@ -57,26 +56,41 @@ const ContactPage: NextPage = () => {
         >
           <div className="w-full">
             <label className={labelStyle}>氏名</label>
-            <input type="text" name="user_name" className={textFieldStyle} />
+            <input
+              type="text"
+              name="user_name"
+              required
+              className={textFieldStyle}
+            />
           </div>
           <div className="w-full">
             <label className={labelStyle}>メールアドレス</label>
-            <input type="email" name="user_email" className={textFieldStyle} />
+            <input
+              type="email"
+              name="user_email"
+              required
+              className={textFieldStyle}
+            />
           </div>
           <div className="w-full">
             <label className={labelStyle}>件名</label>
-            <input type="text" name="subject" className={textFieldStyle} />
+            <input
+              type="text"
+              name="subject"
+              required
+              className={textFieldStyle}
+            />
           </div>
           <div className="w-full">
             <label className={labelStyle}>お問い合わせ内容</label>
-            <textarea name="message" className={textAreaStyle} />
+            <textarea name="message" required className={textAreaStyle} />
           </div>
           <input
             type="submit"
-            value="送信"
+            value={processing ? "送信中..." : "送信"}
             disabled={processing}
             className={clsx([
-              "font-bold text-white bg-red px-14 py-3 rounded-full cursor-pointer",
+              "font-bold text-white bg-red w-36 py-3 rounded-full cursor-pointer",
               opacity,
             ])}
           />
