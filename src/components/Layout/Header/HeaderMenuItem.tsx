@@ -10,9 +10,10 @@ type HeaderMenuItemProps = {
 
 export const HeaderMenuItem: FC<HeaderMenuItemProps> = (props) => {
   const router = useRouter();
-  const textColor = router.pathname === props.url ? "text-red" : "";
-  const hoverOpacity =
-    router.pathname === props.url ? "hover:opacity-80" : "hover:opacity-70";
+  const textColor = router.pathname.match(props.url) ? "text-red" : "";
+  const hoverOpacity = router.pathname.match(props.url)
+    ? "hover:opacity-80"
+    : "hover:opacity-70";
 
   return (
     <li className="font-bold text-sm cursor-pointer">
