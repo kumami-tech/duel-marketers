@@ -43,15 +43,15 @@ const profileItemList = [
     icon: <SquareCapIcon />,
     title: "保有資格",
     description: [
-      "Google アナリティクス個人認定資格（GAIQ）",
-      "SEO検定2級",
-      "ニュース時事能力検定2級",
-      "神田カレーマイスター（シルバー）",
-      "温泉ソムリエ",
-      "ファイナンシャル・プランニング技能検定2級",
-      "金融業務2級 事業承継・M&Aコース",
-      "金融業務検定3級 シニア・ライフコンサルタント",
-      "他金融資格数十種類",
+      "・Google アナリティクス個人認定資格（GAIQ）",
+      "・SEO検定2級",
+      "・ニュース時事能力検定2級",
+      "・神田カレーマイスター（シルバー）",
+      "・温泉ソムリエ",
+      "・ファイナンシャル・プランニング技能検定2級",
+      "・金融業務2級 事業承継・M&Aコース",
+      "・金融業務検定3級 シニア・ライフコンサルタント",
+      "・他金融資格数十種類",
     ].join("\n"),
   },
 ];
@@ -72,15 +72,17 @@ const ProfilePage: NextPage = () => {
         />
       </div>
 
-      <div className=" flex flex-col gap-y-10 items-center py-12">
-        {profileItemList.map((item, index) => (
-          <ProfileItem
-            key={index}
-            icon={item.icon}
-            title={item.title}
-            description={item.description}
-          />
-        ))}
+      <div className="flex justify-center">
+        <div className="max-w-[640px] flex flex-col gap-y-10 items-center py-12 px-6">
+          {profileItemList.map((item, index) => (
+            <ProfileItem
+              key={index}
+              icon={item.icon}
+              title={item.title}
+              description={item.description}
+            />
+          ))}
+        </div>
       </div>
     </Layout>
   );
