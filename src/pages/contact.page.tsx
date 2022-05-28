@@ -11,28 +11,27 @@ const ContactPage: NextPage = () => {
   const opacity = processing ? "opacity-80" : "";
   const router = useRouter();
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setProcessing(true);
 
-    emailjs
-      .sendForm(
-        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
-        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID,
-        form.current,
-        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY,
-      )
-      .then(
-        () => {
-          setProcessing(false);
+    try {
+      await emailjs
+        .sendForm(
+          process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
+          process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID,
+          form.current,
+          process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY,
+        )
+        .then(() => {
           router.push("/contact_completed");
-        },
-        (error) => {
-          alert("エラーが発生しました。時間をおいて再度実行してください。");
-          console.log(error.text);
-          setProcessing(false);
-        },
-      );
+        });
+    } catch (error) {
+      alert("エラーが発生しました。時間をおいて再度実行してください。");
+      console.error(error);
+    } finally {
+      setProcessing(false);
+    }
   };
 
   const labelStyle = "font-bold block mb-1";
