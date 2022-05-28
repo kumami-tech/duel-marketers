@@ -17,7 +17,7 @@ const serviceList = [
       "検索結果の上位を獲得できず、コンテンツの魅力を出しきれません。",
       "検索結果上位を得るための基盤作りには内部SEO対策が必要です。",
       "SEO上のサイトの問題点を分析し、改善するまで丁寧にサポートします。",
-    ].join("\n"),
+    ].join(""),
     monthlyFee: "75,000円",
     contractPeriod: "3ヶ月〜",
   },
@@ -29,7 +29,7 @@ const serviceList = [
       "アップロードした記事は「資産」となり継続して利益を生み続けます。",
       "キーワード調査・選定・競合分析・ユーザー検索意図分析・記事構成・画像選定・",
       "SEOライティングまで、上位表示に必要な施策を全て施した記事を作り上げます。",
-    ].join("\n"),
+    ].join(""),
     feePerArticle: "30,000円〜",
   },
   {
@@ -39,7 +39,7 @@ const serviceList = [
       "Webサイトに集客したユーザーの離脱を減らし、売上に結びつく導線を組み立てます。",
       "Google AnalyticsやGoogle Search Consoleなどでユーザー行動を分析し、",
       "改善のための戦略を立案いたします。",
-    ].join("\n"),
+    ].join(""),
     monthlyFee: "75,000円",
     contractPeriod: "3ヶ月〜",
   },
@@ -51,7 +51,7 @@ const serviceList = [
       "PDCAを素早く回しながら一気通貫でサポートします。",
       "Webサイトの売上を最大化するためのあらゆる改善行動をいたします。",
       "（コンテンツマーケティング、SEO内部対策含む）",
-    ].join("\n"),
+    ].join(""),
     monthlyFee: "75,000円",
     contractPeriod: "3ヶ月〜",
   },
@@ -60,7 +60,7 @@ const serviceList = [
 const ServicePage: NextPage = () => {
   return (
     <Layout>
-      <div className="flex flex-col items-center py-12">
+      <div className="flex flex-col items-center py-8 px-4">
         <h1 className="font-bold text-xl">サービス</h1>
         <div className="flex flex-col gap-y-8 items-center py-7">
           {serviceList.map((item, index) => (
