@@ -4,7 +4,7 @@ import { Layout } from "~/components/Layout/Layout";
 const ContactPage: NextPage = () => {
   return (
     <Layout>
-      <div className="flex flex-col items-center py-12">
+      <div className="flex flex-col items-center px-6 py-8">
         <h1 className="font-bold text-xl">お問い合わせ完了</h1>
         <div className="mt-6">
           <p>
