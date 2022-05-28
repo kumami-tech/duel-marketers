@@ -87,10 +87,10 @@ const ContactPage: NextPage = () => {
           </div>
           <input
             type="submit"
-            value="送信"
+            value={processing ? "送信中..." : "送信"}
             disabled={processing}
             className={clsx([
-              "font-bold text-white bg-red px-14 py-3 rounded-full cursor-pointer",
+              "font-bold text-white bg-red w-36 py-3 rounded-full cursor-pointer",
               opacity,
             ])}
           />
