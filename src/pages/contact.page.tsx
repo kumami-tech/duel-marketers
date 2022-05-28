@@ -56,19 +56,34 @@ const ContactPage: NextPage = () => {
         >
           <div className="w-full">
             <label className={labelStyle}>氏名</label>
-            <input type="text" name="user_name" className={textFieldStyle} />
+            <input
+              type="text"
+              name="user_name"
+              required
+              className={textFieldStyle}
+            />
           </div>
           <div className="w-full">
             <label className={labelStyle}>メールアドレス</label>
-            <input type="email" name="user_email" className={textFieldStyle} />
+            <input
+              type="email"
+              name="user_email"
+              required
+              className={textFieldStyle}
+            />
           </div>
           <div className="w-full">
             <label className={labelStyle}>件名</label>
-            <input type="text" name="subject" className={textFieldStyle} />
+            <input
+              type="text"
+              name="subject"
+              required
+              className={textFieldStyle}
+            />
           </div>
           <div className="w-full">
             <label className={labelStyle}>お問い合わせ内容</label>
-            <textarea name="message" className={textAreaStyle} />
+            <textarea name="message" required className={textAreaStyle} />
           </div>
           <input
             type="submit"
