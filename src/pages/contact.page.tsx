@@ -42,7 +42,7 @@ const ContactPage: NextPage = () => {
 
   return (
     <Layout>
-      <div className="flex flex-col items-center py-12">
+      <div className="flex flex-col items-center px-6 py-8">
         <h1 className="font-bold text-xl">お問い合わせ</h1>
         <div className="my-6">
           お仕事のご依頼や弊社サービスに関する相談はこちらのフォームから行えます。
@@ -52,7 +52,7 @@ const ContactPage: NextPage = () => {
         <form
           ref={form}
           onSubmit={handleSubmit}
-          className="w-[574px] flex flex-col items-center gap-6"
+          className="w-full sm:max-w-[574px] flex flex-col items-center gap-6"
         >
           <div className="w-full">
             <label className={labelStyle}>氏名</label>
