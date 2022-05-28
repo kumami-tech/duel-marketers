@@ -1,8 +1,46 @@
+import { useRef, useState } from "react";
 import type { NextPage } from "next";
+import emailjs from "@emailjs/browser";
+import { useRouter } from "next/router";
 import { Layout } from "~/components/Layout/Layout";
-import { ContactForm } from "~/components/ContactForm";
+import clsx from "clsx";
 
 const ContactPage: NextPage = () => {
+  const form = useRef();
+  const [processing, setProcessing] = useState(false);
+  const opacity = processing ? "opacity-80" : "";
+  const router = useRouter();
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setProcessing(true);
+
+    emailjs
+      .sendForm(
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID,
+        form.current,
+        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY,
+      )
+      .then(
+        () => {
+          setProcessing(false);
+          router.push("/contact_completed");
+        },
+        (error) => {
+          alert("エラーが発生しました。時間をおいて再度実行してください。");
+          console.log(error.text);
+          setProcessing(false);
+        },
+      );
+  };
+
+  const labelStyle = "font-bold block mb-1";
+  const inputCommonStyle =
+    "w-full border-gray-300 border rounded-sm outline-0 px-2";
+  const textFieldStyle = [inputCommonStyle, "h-10"].join(" ");
+  const textAreaStyle = [inputCommonStyle, "h-32 py-1"].join(" ");
+
   return (
     <Layout>
       <div className="flex flex-col items-center py-12">
@@ -12,7 +50,37 @@ const ContactPage: NextPage = () => {
           <br />
           3営業日以内に折り返しご連絡いたします。
         </div>
-        <ContactForm />
+        <form
+          ref={form}
+          onSubmit={handleSubmit}
+          className="w-[574px] flex flex-col items-center gap-6"
+        >
+          <div className="w-full">
+            <label className={labelStyle}>氏名</label>
+            <input type="text" name="user_name" className={textFieldStyle} />
+          </div>
+          <div className="w-full">
+            <label className={labelStyle}>メールアドレス</label>
+            <input type="email" name="user_email" className={textFieldStyle} />
+          </div>
+          <div className="w-full">
+            <label className={labelStyle}>件名</label>
+            <input type="text" name="subject" className={textFieldStyle} />
+          </div>
+          <div className="w-full">
+            <label className={labelStyle}>お問い合わせ内容</label>
+            <textarea name="message" className={textAreaStyle} />
+          </div>
+          <input
+            type="submit"
+            value="送信"
+            disabled={processing}
+            className={clsx([
+              "font-bold text-white bg-red px-14 py-3 rounded-full cursor-pointer",
+              opacity,
+            ])}
+          />
+        </form>
       </div>
     </Layout>
   );
