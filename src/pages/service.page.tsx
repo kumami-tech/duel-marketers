@@ -1,4 +1,5 @@
 import type { NextPage } from "next";
+import Head from "next/head";
 import { Layout } from "~/components/Layout/Layout";
 import { ServiceListItem } from "~/components/ServiceListItem";
 import {
@@ -60,6 +61,9 @@ const serviceList = [
 const ServicePage: NextPage = () => {
   return (
     <Layout>
+      <Head>
+        <title>サービス - DUEL MARKETERS </title>
+      </Head>
       <div className="flex flex-col items-center py-8 px-4">
         <h1 className="font-bold text-xl">サービス</h1>
         <div className="flex flex-col gap-y-8 items-center py-7">
