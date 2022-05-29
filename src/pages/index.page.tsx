@@ -172,9 +172,9 @@ const Home: NextPage = () => {
         </div>
       </section>
 
-      <section className="w-full h-[700px] md:h-[800px] relative bg-[url('/fire-on-right-and-left-sp.jpg')] md:bg-[url('/fire-on-right-and-left-pc.jpg')] bg-[length:100%_100%] bg-center bg-no-repeat flex flex-col items-center justify-center px-6">
+      <section className="w-full h-[740px] md:h-[800px] relative bg-[url('/fire-on-right-and-left-sp.jpg')] md:bg-[url('/fire-on-right-and-left-pc.jpg')] bg-[length:100%_100%] bg-center bg-no-repeat flex flex-col items-center justify-center px-6">
         <div className="flex flex-col items-center">
-          <h1 className="text-white font-bold text-2xl md:text-3xl mb-6 md:mb-10">
+          <h1 className="text-white font-bold text-2xl md:text-3xl mb-5 md:mb-10">
             事業概要
           </h1>
           <div>
