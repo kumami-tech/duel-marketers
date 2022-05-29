@@ -16,7 +16,7 @@ export const Header: FC = () => {
 
   return (
     <>
-      <header className="bg-white px-4 md:px-10 w-full h-16 items-center flex justify-between relative drop-shadow z-10">
+      <header className="bg-white px-4 md:px-10 w-full h-14 md:h-16 items-center flex justify-between relative drop-shadow z-10">
         <Link href="/">
           <a className="hover:opacity-80">
             <Logo />
@@ -32,7 +32,7 @@ export const Header: FC = () => {
       {menuOpen && (
         <HeaderMenuSp
           onBgClick={closeMenu}
-          className="md:hidden absolute top-16"
+          className="md:hidden absolute top-14"
         />
       )}
     </>

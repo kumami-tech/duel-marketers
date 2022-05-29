@@ -7,8 +7,8 @@ export const MenuIcon: FC<MenuIconProps> = (props) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      height="36"
-      width="36"
+      height="32"
+      width="32"
       viewBox="0 0 48 48"
       {...props}
     >
