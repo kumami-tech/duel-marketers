@@ -6,11 +6,11 @@ import clsx from "clsx";
 type HeaderMenuItemProps = {
   title: string;
   url: string;
-  borderBottom?: boolean;
+  borderBottom: boolean;
 };
 
 export const HeaderMenuItem: FC<HeaderMenuItemProps> = (props) => {
-  const borderStyle = props.borderBottom ? "border-b-[1px]" : "";
+  const borderStyle = props.borderBottom ? "md:border-b-[1px]" : "";
   const router = useRouter();
   const textColor = router.pathname.match(props.url) ? "text-red" : "";
   const hoverOpacity = router.pathname.match(props.url)
@@ -20,7 +20,7 @@ export const HeaderMenuItem: FC<HeaderMenuItemProps> = (props) => {
   return (
     <li
       className={clsx([
-        "w-screen md:w-auto font-bold bg-white px-6 md:px-0 py-5 md:py-0 cursor-pointer z-10",
+        "w-screen font-bold bg-white px-8 py-5 cursor-pointer",
         borderStyle,
       ])}
     >
