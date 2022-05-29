@@ -82,19 +82,28 @@ const businessSummary = [
 const Home: NextPage = () => {
   return (
     <Layout>
-      <section className="w-full h-[calc(100vh_-_64px)] relative bg-[url('/red-and-blue-fire-sp2.jpg')] md:bg-[url('/red-and-blue-fire-pc.jpg')] bg-[length:100%_100%] bg-center md:bg-top flex items-center justify-center px-8">
+      <section className="w-full h-[calc(100vh_-_56px)] md:h-[calc(100vh_-_64px)] relative bg-[url('/red-and-blue-fire-sp2.jpg')] md:bg-[url('/red-and-blue-fire-pc.jpg')] bg-[length:100%_100%] bg-center md:bg-top flex items-center justify-center px-8">
         <div className="text-center flex flex-col gap-y-8 items-center">
           <h1 className="text-white font-bold text-3xl md:text-4xl">
             Web課題と決闘する
           </h1>
           <div className="text-white md:text-lg leading-8 md:leading-10">
-            「Webサイトからの集客方法がわからない」
-            <br />
-            「Webサイトを立ち上げたけれど 有効な活用方法がわからない」
-            <br />
-            このような課題とお客様と共に決闘し、
-            <br />
-            Web施策の戦略提案から実行まで伴走いたします。
+            <p className="mb-3">
+              「Webサイトからの集客方法が
+              <br className="sm:hidden" />
+              わからない」
+              <br />
+              「Webサイトを立ち上げたけれど
+              <br className="sm:hidden" />
+              有効な活用方法がわからない」
+            </p>
+            <p>
+              このような課題とお客様と共に決闘し、
+              <br />
+              Web施策の戦略提案から実行まで
+              <br className="sm:hidden" />
+              伴走いたします。
+            </p>
           </div>
           <Link href="/contact">
             <a className="">
@@ -102,6 +111,7 @@ const Home: NextPage = () => {
                 label="無料で相談してみる"
                 textColor="text-black"
                 bgColor="bg-white"
+                className="text-sm sm:text-base"
                 labelClassName="group-hover:opacity-70"
               />
             </a>
