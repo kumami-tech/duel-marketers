@@ -18,15 +18,15 @@ export const HeaderMenuItem: FC<HeaderMenuItemProps> = (props) => {
     : "hover:opacity-70";
 
   return (
-    <li
-      className={clsx([
-        "w-screen md:w-auto font-bold bg-white px-6 md:px-0 py-5 md:py-0 cursor-pointer z-10",
-        borderStyle,
-      ])}
-    >
-      <Link href={props.url}>
+    <Link href={props.url} passHref>
+      <li
+        className={clsx([
+          "w-screen md:w-auto font-bold bg-white px-6 md:px-0 py-5 md:py-0 cursor-pointer z-10",
+          borderStyle,
+        ])}
+      >
         <a className={clsx([textColor, hoverOpacity])}>{props.title}</a>
-      </Link>
-    </li>
+      </li>
+    </Link>
   );
 };

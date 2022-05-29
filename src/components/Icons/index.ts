@@ -1,3 +1,6 @@
+export { MenuIcon } from "./MenuIcon";
+export { CloseIcon } from "./CloseIcon";
+
 export { PeopleIcon } from "./PeopleIcon";
 export { TrendingUpIcon } from "./TrendingUpIcon";
 export { ComputerIcon } from "./ComputerIcon";
