@@ -16,11 +16,13 @@ export const TableRow: FC<TableRowProps> = (props) => {
     <div
       className={clsx([
         props.borderBottom ? "border-b-[0.5px]" : "",
-        "text-white text-lg leading-8 border-gray-400 align-top flex",
+        "text-white md:text-lg leading-8 border-gray-400 align-top flex",
       ])}
     >
-      <div className="w-48 py-5 font-bold pl-10">{props.label}</div>
-      <div className="py-5 pr-10">{dataText}</div>
+      <div className="min-w-[108px] md:w-40 py-3 md:py-5 font-bold pl-4 md:pl-8">
+        {props.label}
+      </div>
+      <div className="py-3 md:py-5 pr-4 md:pr-8">{dataText}</div>
     </div>
   );
 };

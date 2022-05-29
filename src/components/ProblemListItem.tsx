@@ -24,7 +24,7 @@ export const ProblemListItem: FC<ProblemListItemProps> = (props) => {
   });
 
   return (
-    <div className="w-60 flex flex-col items-center">
+    <div className="xl:w-60 flex flex-col items-center">
       {props.icon}
       <div className="text-lg font-bold my-3">{titleText}</div>
       <ul className="list-disc pl-4">{descriptionText}</ul>
