@@ -1,4 +1,5 @@
 import type { NextPage } from "next";
+import Head from "next/head";
 import Image from "next/image";
 import { Layout } from "~/components/Layout/Layout";
 import { ProfileItem } from "~/components/ProfileItem";
@@ -59,6 +60,9 @@ const profileItemList = [
 const ProfilePage: NextPage = () => {
   return (
     <Layout>
+      <Head>
+        <title>プロフィール - DUEL MARKETERS </title>
+      </Head>
       <div className="w-full h-[360px] md:h-[400px] relative bg-[url('/fire-from-below.jpg')] bg-cover flex flex-col items-center justify-center">
         <div className="flex flex-col items-center">
           <h1 className="text-white font-bold text-xl text-center mb-5">

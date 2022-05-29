@@ -1,5 +1,6 @@
 import { useRef, useState } from "react";
 import type { NextPage } from "next";
+import Head from "next/head";
 import emailjs from "@emailjs/browser";
 import { useRouter } from "next/router";
 import { Layout } from "~/components/Layout/Layout";
@@ -42,6 +43,9 @@ const ContactPage: NextPage = () => {
 
   return (
     <Layout>
+      <Head>
+        <title>お問い合わせ - DUEL MARKETERS </title>
+      </Head>
       <div className="flex flex-col items-center px-6 py-8">
         <h1 className="font-bold text-xl">お問い合わせ</h1>
         <div className="my-6">

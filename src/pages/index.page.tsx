@@ -1,4 +1,5 @@
 import type { NextPage } from "next";
+import Head from "next/head";
 import Link from "next/link";
 import { Layout } from "~/components/Layout/Layout";
 import {
@@ -82,6 +83,9 @@ const businessSummary = [
 const Home: NextPage = () => {
   return (
     <Layout>
+      <Head>
+        <title>DUEL MARKETERS</title>
+      </Head>
       <section className="w-full h-[calc(100vh_-_56px)] md:h-[calc(100vh_-_64px)] relative bg-[url('/red-and-blue-fire-sp2.jpg')] md:bg-[url('/red-and-blue-fire-pc.jpg')] bg-[length:100%_100%] bg-center md:bg-top flex items-center justify-center px-8">
         <div className="text-center flex flex-col gap-y-8 items-center">
           <h1 className="text-white font-bold text-3xl md:text-4xl">
@@ -168,9 +172,9 @@ const Home: NextPage = () => {
         </div>
       </section>
 
-      <section className="w-full h-[700px] md:h-[800px] relative bg-[url('/fire-on-right-and-left-sp.jpg')] md:bg-[url('/fire-on-right-and-left-pc.jpg')] bg-[length:100%_100%] bg-center bg-no-repeat flex flex-col items-center justify-center px-6">
+      <section className="w-full h-[740px] md:h-[800px] relative bg-[url('/fire-on-right-and-left-sp.jpg')] md:bg-[url('/fire-on-right-and-left-pc.jpg')] bg-[length:100%_100%] bg-center bg-no-repeat flex flex-col items-center justify-center px-6">
         <div className="flex flex-col items-center">
-          <h1 className="text-white font-bold text-2xl md:text-3xl mb-6 md:mb-10">
+          <h1 className="text-white font-bold text-2xl md:text-3xl mb-5 md:mb-10">
             事業概要
           </h1>
           <div>
