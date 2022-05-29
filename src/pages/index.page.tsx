@@ -82,13 +82,15 @@ const businessSummary = [
 const Home: NextPage = () => {
   return (
     <Layout>
-      <section className="w-full h-[calc(100vh_-_64px)] relative bg-[url('/red-and-blue-fire.jpg')] bg-cover flex items-center justify-center">
+      <section className="w-full h-[calc(100vh_-_64px)] relative bg-[url('/red-and-blue-fire-sp2.jpg')] md:bg-[url('/red-and-blue-fire-pc.jpg')] bg-[length:100%_100%] bg-center md:bg-top flex items-center justify-center px-8">
         <div className="text-center flex flex-col gap-y-8 items-center">
-          <h1 className="text-white font-bold text-4xl">Web課題と決闘する</h1>
-          <div className="text-white text-lg leading-10">
+          <h1 className="text-white font-bold text-3xl md:text-4xl">
+            Web課題と決闘する
+          </h1>
+          <div className="text-white md:text-lg leading-8 md:leading-10">
             「Webサイトからの集客方法がわからない」
             <br />
-            「Webサイトを立ち上げたけれど有効な活用方法がわからない」
+            「Webサイトを立ち上げたけれど 有効な活用方法がわからない」
             <br />
             このような課題とお客様と共に決闘し、
             <br />
@@ -107,11 +109,13 @@ const Home: NextPage = () => {
         </div>
       </section>
 
-      <section className="py-20 flex flex-col items-center">
-        <h1 className="font-bold text-3xl text-center mb-10">
-          このようなWebのお悩みはありませんか？
+      <section className="py-12 md:py-20 flex flex-col items-center px-8">
+        <h1 className="font-bold text-2xl md:text-3xl text-center mb-10">
+          このようなWebのお悩みは
+          <br className="md:hidden" />
+          ありませんか？
         </h1>
-        <div className="flex gap-x-14">
+        <div className="flex-wrap flex flex-col xl:flex-row items-center gap-x-14 gap-y-10">
           {problemList.map((item, index) => {
             return (
               <ProblemListItem
@@ -124,26 +128,26 @@ const Home: NextPage = () => {
           })}
         </div>
         <SeparatorDots className="my-14" />
-        <div className="leading-8 text-center text-lg">
+        <div className="leading-8 md:text-center md:text-lg">
           <p className="mb-6">
             <span className="font-bold text-red mr-1">DUEL MARKETERS</span>
-            では以上のような悩みを、
-            <br />
+            では以上のようなお悩みを、
+            <br className="hidden md:block" />
             <span className="font-bold">
               「お客様の調査」「競合分析」「アクセス解析」
             </span>
             を基に戦略設定から実行まで、
-            <br />
+            <br className="hidden md:block" />
             お客様の課題に寄り添った提案をさせていただきます。
           </p>
           <p className="mb-6">
             どんな小さな困りごとでも構いません。
-            <br />
+            <br className="hidden md:block" />
             まずは一度ご相談いただければ、真摯にご対応させていただきます。
           </p>
           <p>
             具体的なサービス内容は、
-            <br />
+            <br className="hidden md:block" />
             <Link href="/service">
               <a className="text-red underline hover:opacity-80 cursor-pointer mx-0.5">
                 サービスページ
@@ -154,9 +158,11 @@ const Home: NextPage = () => {
         </div>
       </section>
 
-      <section className="w-full h-[840px] relative bg-[url('/fire-on-right-and-left.jpg')] bg-cover flex flex-col items-center justify-center">
+      <section className="w-full h-[700px] md:h-[800px] relative bg-[url('/fire-on-right-and-left-sp.jpg')] md:bg-[url('/fire-on-right-and-left-pc.jpg')] bg-[length:100%_100%] bg-center bg-no-repeat flex flex-col items-center justify-center px-6">
         <div className="flex flex-col items-center">
-          <h1 className="text-white font-bold text-4xl mb-8">事業概要</h1>
+          <h1 className="text-white font-bold text-2xl md:text-3xl mb-6 md:mb-10">
+            事業概要
+          </h1>
           <div>
             {businessSummary.map((item, index) => (
               <TableRow
