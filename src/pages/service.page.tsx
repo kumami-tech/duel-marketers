@@ -87,6 +87,8 @@ const ServicePage: NextPage = () => {
               monthlyFee={item.monthlyFee}
               contractPeriod={item.contractPeriod}
               feePerArticle={item.feePerArticle}
+              constructionAgency={item.constructionAgency}
+              operationAgency={item.operationAgency}
             />
           ))}
         </div>
