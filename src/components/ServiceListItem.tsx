@@ -7,6 +7,8 @@ type ServiceListItemProps = {
   monthlyFee?: string;
   contractPeriod?: string;
   feePerArticle?: string;
+  constructionAgency?: string;
+  operationAgency?: string;
 };
 
 export const ServiceListItem: FC<ServiceListItemProps> = (props) => {
@@ -36,6 +38,18 @@ export const ServiceListItem: FC<ServiceListItemProps> = (props) => {
               <div>
                 <span className="font-bold mr-4">1記事</span>
                 <span className="">{props.feePerArticle}</span>
+              </div>
+            )}
+            {props.constructionAgency && (
+              <div>
+                <span className="font-bold mr-4">構築代行</span>
+                <span className="">{props.constructionAgency}</span>
+              </div>
+            )}
+            {props.operationAgency && (
+              <div>
+                <span className="font-bold mr-4">運用代行</span>
+                <span className="">{props.operationAgency}</span>
               </div>
             )}
           </div>

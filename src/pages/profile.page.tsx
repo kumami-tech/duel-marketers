@@ -44,6 +44,7 @@ const profileItemList = [
     icon: <SquareCapIcon />,
     title: "保有資格",
     description: [
+      "・ウェブ解析士",
       "・Google アナリティクス個人認定資格（GAIQ）",
       "・SEO検定2級",
       "・ニュース時事能力検定2級",
