@@ -14,4 +14,5 @@ export { SquareCapIcon } from "./SquareCapIcon";
 export { SeoIcon } from "./SeoIcon";
 export { BrowserIcon } from "./BrowserIcon";
 export { DataAnalyticsIcon } from "./DataAnalyticsIcon";
+export { SmartPhoneIcon } from "./SmartPhoneIcon";
 export { BusinessManIcon } from "./BusinessManIcon";

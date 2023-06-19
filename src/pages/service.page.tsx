@@ -7,6 +7,7 @@ import {
   BrowserIcon,
   DataAnalyticsIcon,
   BusinessManIcon,
+  SmartPhoneIcon,
 } from "~/components/Icons";
 
 const serviceList = [
@@ -43,6 +44,16 @@ const serviceList = [
     ].join(""),
     monthlyFee: "75,000円",
     contractPeriod: "3ヶ月〜",
+  },
+  {
+    icon: <SmartPhoneIcon />,
+    title: "Lステップ構築・運用代行",
+    description: [
+      "LINEに集客したリストから売上を向上させるようLINEの構築をいたします。",
+      "オプションでユーザー行動を分析し、改善のための戦略設計まで対応可能です。",
+    ].join(""),
+    constructionAgency: "1件15万円～",
+    operationAgency: "1ヶ月2万円〜",
   },
   {
     icon: <BusinessManIcon />,
